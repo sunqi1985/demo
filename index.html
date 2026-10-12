@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jia Wu — IB Student, Writer, Debater</title>
+<meta name="description" content="Jia Wu is a Grade 10 IB student in Shanghai. Writing, debate, guzheng, calligraphy, and an interest in biology and economics.">
+<meta name="author" content="Jia Wu">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Jia Wu — IB Student, Writer, Debater">
+<meta property="og:description" content="Writing, debate, guzheng, and an interest in how we explain living systems.">
+<meta property="og:image" content="/og-image.png">
+<meta property="og:url" content="https://example.com">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://example.com">
+
+<style>
+  :root{
+    --bg:#FCFBF8;
+    --surface:#FFFFFF;
+    --ink:#1A1D21;
+    --ink-2:#565E68;
+    --ink-3:#8C939C;
+    --line:#E5E1D7;
+    --accent:#9C3A2B;
+    --tint:#F4F1EA;
+    --serif:Georgia,"Times New Roman","Songti SC","Noto Serif SC",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    --r:12px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:var(--sans);font-size:16px;line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 28px}
+  .skip{position:absolute;left:-9999px;background:var(--ink);color:#fff;padding:10px 16px;z-index:99}
+  .skip:focus{left:0;top:0}
+
+  .notice{
+    background:#FDF6E3;border-bottom:1px solid #E8DCB5;color:#7A6420;
+    font-size:12.5px;text-align:center;padding:9px 20px;line-height:1.5;
+  }
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(252,251,248,.88);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:var(--serif);font-size:17px;letter-spacing:.01em}
+  .nav ul{display:flex;gap:28px;list-style:none;font-size:14px;color:var(--ink-2)}
+  .nav ul a{padding-bottom:2px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+  .nav ul a:hover{color:var(--ink);border-bottom-color:var(--accent)}
+
+  .hero{padding:92px 0 84px;text-align:center}
+  .monogram{
+    width:62px;height:62px;margin:0 auto 30px;
+    border:1px solid var(--accent);border-radius:6px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-size:21px;color:var(--accent);letter-spacing:.06em;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;
+    font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--ink-3);margin-bottom:20px;
+  }
+  .dot{width:5px;height:5px;border-radius:50%;background:var(--accent)}
+  .hero h1{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(42px,7.4vw,72px);line-height:1.1;letter-spacing:-.02em;
+  }
+  .tagline{
+    font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.6vw,23px);
+    color:var(--ink-2);margin-top:22px;
+  }
+  .hero .intro{max-width:62ch;margin:28px auto 0;color:var(--ink-2);font-size:16.5px}
+  .cta{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:38px}
+  .btn{
+    display:inline-block;padding:11px 26px;border-radius:999px;font-size:14.5px;
+    border:1px solid var(--ink);transition:background .2s,color .2s,border-color .2s;
+  }
+  .btn-solid{background:var(--ink);color:#fff}
+  .btn-solid:hover{background:var(--accent);border-color:var(--accent)}
+  .btn-ghost{color:var(--ink);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--ink)}
+
+  section{padding:82px 0;border-top:1px solid var(--line)}
+  .sec-label{
+    font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:16px;
+  }
+  h2{
+    font-family:var(--serif);font-weight:400;
+    font-size:clamp(26px,3.6vw,34px);letter-spacing:-.01em;margin-bottom:30px;
+  }
+
+  .about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:start}
+  .about-text p{color:var(--ink-2);margin-bottom:20px}
+  .about-text p:last-child{margin-bottom:0}
+  .facts{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+    padding:26px 28px;
+  }
+  .facts dl{display:grid;grid-template-columns:1fr;gap:16px}
+  .facts dt{
+    font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--ink-3);margin-bottom:3px;
+  }
+  .facts dd{font-size:14.5px;color:var(--ink);line-height:1.5}
+
+  .courses{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .course{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+    padding:20px 22px;display:flex;justify-content:space-between;
+    align-items:baseline;gap:14px;
+  }
+  .course .name{font-size:14.5px;line-height:1.45}
+  .level{
+    flex-shrink:0;font-size:11.5px;letter-spacing:.05em;
+    padding:3px 9px;border-radius:5px;background:var(--tint);color:var(--ink-2);
+  }
+  .sec-note{margin-top:18px;font-size:13px;color:var(--ink-3)}
+
+  .acts{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .act{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+    padding:28px 30px;
+  }
+  .act h3{font-family:var(--serif);font-weight:400;font-size:20px;margin-bottom:12px}
+  .act p{font-size:14.5px;color:var(--ink-2);line-height:1.7}
+  .act .meta{
+    display:block;margin-top:16px;font-size:12px;color:var(--ink-3);
+    letter-spacing:.05em;text-transform:uppercase;
+  }
+
+  .pieces{list-style:none;border-top:1px solid var(--line)}
+  .pieces li{border-bottom:1px solid var(--line)}
+  .pieces a{
+    display:flex;justify-content:space-between;align-items:baseline;
+    gap:24px;padding:24px 4px;transition:padding-left .25s ease;
+  }
+  .pieces a:hover{padding-left:14px}
+  .pieces .t{font-family:var(--serif);font-size:19px;line-height:1.4}
+  .pieces .m{font-size:13px;color:var(--ink-3);white-space:nowrap}
+  .pieces a:hover .t{color:var(--accent)}
+
+  .contact{border-top:1px solid var(--line);text-align:center;padding:96px 0}
+  .contact h2{margin-bottom:16px}
+  .contact p{color:var(--ink-2);margin-bottom:30px}
+  .mail{
+    font-family:var(--serif);font-size:clamp(19px,3.2vw,28px);
+    border-bottom:1px solid var(--accent);padding-bottom:4px;transition:color .2s;
+  }
+  .mail:hover{color:var(--accent)}
+
+  footer{border-top:1px solid var(--line);padding:26px 0}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-3)}
+
+  @media (max-width:880px){
+    .about-grid{grid-template-columns:1fr;gap:34px}
+    .courses{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:620px){
+    .nav ul{gap:18px;font-size:13px}
+    .hero{padding:62px 0 56px}
+    .acts{grid-template-columns:1fr}
+    .courses{grid-template-columns:1fr}
+    section{padding:60px 0}
+    .pieces .m{display:none}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="notice">
+  Demo preview — the name, school, and all achievements shown here are fictional sample data, for layout review only.
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Jia Wu</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#coursework">Coursework</a></li>
+        <li><a href="#activities">Activities</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="wrap hero">
+    <div class="monogram" aria-hidden="true">JW</div>
+    <p class="eyebrow"><span class="dot"></span>IB Diploma Programme · Shanghai, China</p>
+    <h1>Jia Wu</h1>
+    <p class="tagline">I write, I debate, and I play the guzheng.</p>
+    <p class="intro">A Grade 10 student in the IB programme in Shanghai. My interests sit where language meets life science — in how we explain living systems to people who are not scientists.</p>
+    <div class="cta">
+      <a class="btn btn-solid" href="#activities">See what I do</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <p class="sec-label">About</p>
+      <h2>Two halves of the same thing</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I am in Grade 10 in the IB programme, studying Chinese, English, Mathematics, Biology, Chemistry, and Economics. On paper that looks like a scattered list. It is not: each one is a different way of describing the same world, and what interests me most are the seams between them — where an economic model meets an ecosystem, or where a scientific finding has to be argued for in plain language.</p>
+          <p>The other half of my life is performance and practice: competitive debate and speech, essay writing, the guzheng, calligraphy, and dance. I have come to think these are not separate from the academic side at all. A debate round and a lab report ask for the same thing — say what you mean, and show your evidence.</p>
+        </div>
+        <aside class="facts">
+          <dl>
+            <div><dt>Based in</dt><dd>Shanghai, China</dd></div>
+            <div><dt>School</dt><dd>IB school, Shanghai</dd></div>
+            <div><dt>Programme</dt><dd>IB Diploma Programme, Grade 10</dd></div>
+            <div><dt>Languages</dt><dd>Chinese, English</dd></div>
+            <div><dt>Instrument</dt><dd>Guzheng</dd></div>
+            <div><dt>Focus</dt><dd>Biology · Economics · Writing</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="coursework">
+    <div class="wrap">
+      <p class="sec-label">Coursework</p>
+      <h2>What I study</h2>
+      <div class="courses">
+        <div class="course"><span class="name">Chinese A: Language and Literature</span><span class="level">HL</span></div>
+        <div class="course"><span class="name">English B</span><span class="level">HL</span></div>
+        <div class="course"><span class="name">Biology</span><span class="level">HL</span></div>
+        <div class="course"><span class="name">Economics</span><span class="level">SL</span></div>
+        <div class="course"><span class="name">Chemistry</span><span class="level">SL</span></div>
+        <div class="course"><span class="name">Mathematics: Analysis and Approaches</span><span class="level">SL</span></div>
+      </div>
+      <p class="sec-note">Final Higher Level and Standard Level choices are confirmed in Grade 11.</p>
+    </div>
+  </section>
+
+  <section id="activities">
+    <div class="wrap">
+      <p class="sec-label">Activities</p>
+      <h2>Beyond the classroom</h2>
+      <div class="acts">
+        <article class="act">
+          <h3>Debate &amp; Public Speaking</h3>
+          <p>Four years of competitive debate in Chinese and English, mostly in the public forum format. The part I like most is cross-examination — you have to keep thinking while you are talking, and there is nowhere to hide.</p>
+          <span class="meta">School team · Since Grade 6</span>
+        </article>
+        <article class="act">
+          <h3>Writing</h3>
+          <p>Essays and longer pieces, most of them circling back to science and the question of how it gets explained to everyone else. I write for the school journal and keep a blog of my own on the side.</p>
+          <span class="meta">School journal · Personal blog</span>
+        </article>
+        <article class="act">
+          <h3>Guzheng &amp; Calligraphy</h3>
+          <p>I have played the guzheng since primary school and practise calligraphy alongside it. Calligraphy is the stricter discipline: once a stroke is down, it stays down.</p>
+          <span class="meta">Guzheng since 2018 · Calligraphy since 2019</span>
+        </article>
+        <article class="act">
+          <h3>Dance</h3>
+          <p>Classical and contemporary dance, twice a week. It is where I learned to hold a room, which turned out to be surprisingly useful in debate rounds.</p>
+          <span class="meta">Classical &amp; contemporary</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="writing">
+    <div class="wrap">
+      <p class="sec-label">Writing</p>
+      <h2>Selected pieces</h2>
+      <ul class="pieces">
+        <li><a href="#"><span class="t">Why We Keep Telling Stories About Extinction</span><span class="m">Essay · 2026</span></a></li>
+        <li><a href="#"><span class="t">What a River Costs</span><span class="m">Economics · 2026</span></a></li>
+        <li><a href="#"><span class="t">The Quiet Half of Debate</span><span class="m">Personal essay · 2025</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <p class="sec-label">Contact</p>
+      <h2>Happy to hear from you</h2>
+      <p>Teachers, mentors, and programmes are all welcome to reach out.</p>
+      <a class="mail" href="mailto:jia.wu@example.com">jia.wu@example.com</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Jia Wu</span>
+    <span>Shanghai, China</span>
+  </div>
+</footer>
+
+</body>
+</html>
